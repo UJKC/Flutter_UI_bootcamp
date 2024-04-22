@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:untitled/MyStatefulWidget.dart';
 import 'package:untitled/MyStatefulWidgetCompleted.dart';
 import 'package:untitled/MyStateWidgetIncomplete.dart';
+import 'package:untitled/CustomGet.dart';
+import 'package:untitled/CustomGetID.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,11 +20,10 @@ class HomeScreen extends StatelessWidget {
             ListTile(
               title: const Text("Get all tasks"),
               onTap: () {
-                print("All Tasks");
                 Navigator.pop(context);
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => MyStatefulWidget()),
+                  MaterialPageRoute(builder: (context) => const MyStatefulWidget()),
                 );
               },
             ),
@@ -32,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => MyStatefulWidgetCompleted()),
+                  MaterialPageRoute(builder: (context) => const MyStatefulWidgetCompleted()),
                 );
               },
             ),
@@ -42,7 +43,27 @@ class HomeScreen extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.push(
                   context, 
-                  MaterialPageRoute(builder: (context) => MyStateWidgetIncomplete()),
+                  MaterialPageRoute(builder: (context) => const MyStateWidgetIncomplete()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text("Custom Todoid"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const CustomGet()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text("Custom userId"),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                  context, 
+                  MaterialPageRoute(builder: (context) => const CustomGetId()),
                 );
               },
             ),

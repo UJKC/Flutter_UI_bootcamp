@@ -16,13 +16,12 @@ class _MyStatefulWidgetCompletedState extends State<MyStatefulWidgetCompleted> {
   void getCharactersfromApi() async {
     CharacterApi.getCharacters().then((response) {
       setState(() {
-      Iterable list = json.decode(response.body);
-      TodoList = list
-        .map((model) => Todo.fromJson(model))
-        .where((todo) => todo.completed == true) // Filter completed todos
-        .toList();
-    });
-
+        Iterable list = json.decode(response.body);
+        TodoList = list
+          .map((model) => Todo.fromJson(model))
+          .where((todo) => todo.completed == true) // Filter completed todos
+          .toList();
+      });
     });
   }
 
